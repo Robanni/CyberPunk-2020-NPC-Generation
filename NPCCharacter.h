@@ -1,12 +1,14 @@
 #pragma once
 
 #include "Includes.h"
+#include "GameFunctions.h"
+
 
 
 class NPCCharacter
 {
 public:
-	NPCCharacter();
+	NPCCharacter(std::string role);
 	unsigned short int getStats();
 
 protected:
@@ -30,12 +32,26 @@ protected:
 	unsigned short int SPRLeg;
 	unsigned short int SPLLeg;
 	// Оснащение персонажа
-	std::string Cyberware;//По хорошему тут должен быть массив
+	std::vector<std::string> Cyberware;
 	std::string Weapon;
 };
 
-NPCCharacter::NPCCharacter()
-{
+NPCCharacter::NPCCharacter(std::string role)
+{	
+	Int = rollRange(5, 10);
+	Ref = rollRange(5, 10);
+	Tech = rollRange(5, 10);
+	Cool = rollRange(5, 10);
+	Attr = rollRange(5, 10);
+	Luck = rollRange(5, 10);
+	MA = rollRange(5, 10);
+	Body = rollRange(5, 10);
+	Emp = rollRange(5, 10);
+
+	Role = role;
+
+	
+
 }
 
 inline unsigned short int NPCCharacter::getStats()
