@@ -13,10 +13,10 @@ int rollDice(int numberOfFaces)
 }
 
 int rollRange(int min, int range)
-// ролит число из диапазона до range не включая и прибавляет к нему min
+// ролит число из диапазона от min до range
 {
 	if (range == 0)return 0;
-	int value = std::rand() % range + min;
+	int value = std::rand() % (range + 1 - min) + min;
 
 	return value;
 }
